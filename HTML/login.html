@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="../CSS/Estilos.css">
 </head>
 <body>
-  <h2>Acceso protegido</h2>
-  <input type="password" id="password" placeholder="Introduce la contraseña" />
-  <button onclick="login()">Entrar</button>
+
+  <main>
+    <section class="login">
+      <h2>Acceso protegido</h2>
+      <input type="password" id="password" placeholder="Introduce la contraseña" />
+      <button onclick="login()">Entrar</button>
+    </section>
+  </main>
 
   <script>
     const PASSWORD = "admin"; // Cambia por la que quieras
@@ -16,8 +22,8 @@
     function login() {
       const input = document.getElementById('password').value;
       if (input === PASSWORD) {
-        localStorage.setItem('logueado', 'true');
-        window.location.href = 'index.html'; // o la página que quieras proteger
+          localStorage.setItem('logueado', 'true');
+          window.location.href = '../index.html'; // o la página que quieras proteger
       } else {
         alert('Contraseña incorrecta');
       }

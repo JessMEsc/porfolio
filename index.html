@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="CSS/Estilos.css">
 </head>
 <body>
+    <script>
+        if(localStorage.getItem('logueado') !== 'true') {
+        window.location.href = 'HTML/login.html';
+        }
+    </script>
+
     <header>
         
         <h1>Bienvenidas a nuestro porfolio</h1>
@@ -17,6 +23,7 @@
                 <li><a href="HTML/SobreNosotras.html">Sobre nosotras</a></li>
                 <li><a href="HTML/Porfolio.html">Porfolio</a></li>
                 <li><a href="HTML/Contacto.html">Contacto</a></li>
+                <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
             </ul>
         </nav>
 
@@ -36,6 +43,12 @@
     </footer>
 
     <script src="JavaScript/Script.js"></script>
+    <script>
+        function cerrarSesion() {
+            localStorage.removeItem('logueado');
+            window.location.href = 'HTML/login.html';
+        }
+    </script>
 
 </body>
 
